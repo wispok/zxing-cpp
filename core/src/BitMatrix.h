@@ -25,11 +25,12 @@ class ByteMatrix;
  */
 class BitMatrix
 {
-	int _width = 0;
-	int _height = 0;
-	using data_t = uint8_t;
+	public:
+		int _width = 0;
+		int _height = 0;
+		using data_t = uint8_t;
 
-	std::vector<data_t> _bits;
+		std::vector<data_t> _bits;
 	// There is nothing wrong to support this but disable to make it explicit since we may copy something very big here.
 	// Use copy() below.
 	BitMatrix(const BitMatrix&) = default;

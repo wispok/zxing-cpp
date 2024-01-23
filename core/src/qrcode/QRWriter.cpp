@@ -40,7 +40,7 @@ BitMatrix Writer::encode(const std::wstring& contents, int width, int height) co
 	}
 
 	EncodeResult code = Encode(contents, _ecLevel, _encoding, _version, _useGs1Format, _maskPattern);
-	return Inflate(std::move(code.matrix), width, height, _margin);
+	return code.matrix;
 }
 
 BitMatrix Writer::encode(const std::string& contents, int width, int height) const
